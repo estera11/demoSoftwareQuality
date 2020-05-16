@@ -12,11 +12,13 @@ public class Controller {
 
     Controller(){}
 
+    //method to create survey
     public Survey createSurvey(String title){
        Survey survey = new Survey(title);
         return survey;
     }
 
+    //method to add question to survey
     public void addQuestionToSurvey(Question question, Survey s){
         if(s.getQuestionList().size()<10) {
             s.addQuestion(question);
@@ -27,6 +29,7 @@ public class Controller {
 
     }
 
+    //method to display all surveys
     public String displaySurveys(List<Survey> surveys){
         String response = "";
         if(surveys.size()==0){
@@ -42,6 +45,11 @@ public class Controller {
             }
         }
        return response;
+    }
+
+    //method to get survey by name. Story Points: 2
+    public Survey getSurveyByName(String surveyName){
+        return null;
     }
 
     public static void main(String[] args) {

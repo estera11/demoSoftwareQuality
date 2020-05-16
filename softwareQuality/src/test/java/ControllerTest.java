@@ -59,5 +59,15 @@ public class ControllerTest {
 
     }
 
+    @Test
+    public void testGetSurveyByName(){
+        Survey survey = controller.getSurveyByName("First Survey");
+        String expected = "First Survey";
+        String actual = survey.getTitle();
+
+        assertEquals(expected, actual);
+
+    }
+
 
 }
