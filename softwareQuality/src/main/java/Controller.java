@@ -49,7 +49,7 @@ public class Controller {
        return response;
     }
 
-    //method to get survey by name. Story Points: 2
+    //method to get survey by name
     public Survey getSurveyByName(String surveyName){
         boolean found = false;
         Survey survey = null;
@@ -59,15 +59,20 @@ public class Controller {
                 found = true;
                 index = i;
             }
-            else{
-                throw new NoSuchElementException();
-            }
-
         }
         if(found){
             survey = surveys.get(index);
+        } else{
+            throw new NoSuchElementException();
         }
         return survey;
+    }
+
+    public void displaySurvey(Survey survey){
+        System.out.println("Survey Title: "+survey.getTitle());
+        for (Question q: survey.getQuestionList()) {
+                System.out.println("Question "+q.getId()+ ": "+q.getQuestion());
+            }
     }
 
     public static void main(String[] args) {
@@ -87,6 +92,7 @@ public class Controller {
         Question q1 = new Question(1,"Service Quality");
         Question q2 = new Question(2, "Cleanliness");
         Question q3 = new Question(3, "Comfort");
+
         Question q4 = new Question(4, "Facilities");
         Question q5 = new Question(5, "Service Diversification");
 
@@ -99,10 +105,13 @@ public class Controller {
         c.addQuestionToSurvey(q5, survey2);
 
         //display the surveys
-        surveys.add(survey);
-        surveys.add(survey2);
-
         c.displaySurveys(surveys);
+
+
+        //get survey by name and display it
+         Survey s = c.getSurveyByName("First Survey");
+         c.displaySurvey(s);
+
     }
 
 }

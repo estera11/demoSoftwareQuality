@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +50,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ControllerTest">
+  <component name="RunManager" selected="Application.Controller">
+    <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller" />
+      <module name="softwareQuality.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -76,26 +84,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;ControllerTest.testAddQuestion&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ControllerTest.testCreateSurvey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCreateSurvey&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -152,11 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Controller" />
         <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.ControllerTest.testGetSurveyByName" />
         <item itemvalue="Gradle.ControllerTest.testDisplaySurveys" />
         <item itemvalue="Gradle.ControllerTest.testAddQuestion" />
-        <item itemvalue="Gradle.ControllerTest.testCreateSurvey" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589666144903</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implement functionality to search survey by name and made its corresponding test pass">
+      <created>1589712078422</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589712078422</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +215,7 @@
     <MESSAGE value="Implement functionality to add question to survey" />
     <MESSAGE value="Refactor adding questions to  survey" />
     <MESSAGE value="Commit with test to get survey by name that fails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit with test to get survey by name that fails" />
+    <MESSAGE value="Implement functionality to search survey by name and made its corresponding test pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement functionality to search survey by name and made its corresponding test pass" />
   </component>
 </project>
