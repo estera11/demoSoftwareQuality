@@ -1,10 +1,13 @@
 
 import model.Question;
 import model.Survey;
+import model.SurveyResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -72,8 +75,19 @@ public class ControllerTest {
 
     @Test
     public void testCreateSurveyResponse(){
+        Survey survey = new Survey("Survey");
+        Map<Integer, Integer> r = new HashMap<>();
+        controller.createSurveyResponse(1,4, survey);
+        controller.createSurveyResponse(2,3, survey);
+
+        int expected = 2;
+        int actual =  survey.getSurveyResponses().size();
+
+        assertEquals(expected, actual);
 
     }
+
+
 
 
 }

@@ -6,16 +6,12 @@ import java.util.Map;
 
 public class SurveyResponse {
 
-    private Survey survey;
-    private Map<Integer, Integer> responses;
+    //map object created with question id and response integer value between 1 and 5
+    private Map<Integer, Integer> response;
 
     public SurveyResponse(){}
 
-    public Survey getSurvey() { return survey; }
+    public Map<Integer, Integer> getResponse() { return response; }
 
-    public void setSurvey(Survey survey) { this.survey = survey; }
-
-    public Map<Integer, Integer> getResponses() { return responses; }
-
-    public void setResponses(Map<Integer, Integer> responses) { this.responses = responses; }
+    public void setResponse(Map<Integer, Integer> responses) { this.response = responses; }
 }

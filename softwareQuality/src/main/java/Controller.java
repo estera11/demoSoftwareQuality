@@ -1,14 +1,15 @@
 import model.Question;
 import model.Survey;
+import model.SurveyResponse;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class Controller {
     private static Survey survey;
     private static Survey survey2;
-    private static  List<Survey> surveys = new ArrayList<>();
+    private static List<Survey> surveys = new ArrayList<>();
+    private static List<SurveyResponse> surveyResponses = new ArrayList<>();
+
 
 
     Controller(){}
@@ -26,7 +27,7 @@ public class Controller {
             s.addQuestion(question);
         }
         else{
-            System.out.println("Question number limit reached.");
+            throw new RuntimeException("Questions number limit reached.");
         }
 
     }
@@ -35,9 +36,10 @@ public class Controller {
     public String displaySurveys(List<Survey> surveys){
         String response = "";
         if(surveys.size()==0){
-            response = "No survey to display";
+            response = "No surveys";
+            throw new NoSuchElementException("There are no surveys");
         }else{
-            response = "There are "+surveys.size()+" surveys";
+            response = "Surveys displayed";
             for(Survey s : surveys){
                 System.out.println("Survey Title: "+s.getTitle());
                 for (Question q: s.getQuestionList()) {
@@ -75,6 +77,19 @@ public class Controller {
             }
     }
 
+    //method to create surveyResponse
+    public SurveyResponse createSurveyResponse(int questionId, int answer, Survey survey){
+        SurveyResponse response = new SurveyResponse();
+        Map<Integer, Integer> r = new HashMap<>();
+        r.put(questionId,answer);
+        response.setResponse(r);
+        surveyResponses.add(response);
+        survey.setSurveyResponses(surveyResponses);
+        return response;
+    }
+
+
+
     public static void main(String[] args) {
         Controller c = new Controller();
 
@@ -111,6 +126,11 @@ public class Controller {
         //get survey by name and display it
          Survey s = c.getSurveyByName("First Survey");
          c.displaySurvey(s);
+
+
+         //create survey response and add it to specific survey
+        c.createSurveyResponse(1,4, survey);
+        c.createSurveyResponse(2,3, survey);
 
     }
 
