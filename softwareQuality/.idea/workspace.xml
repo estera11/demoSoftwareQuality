@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ControllerTest.testGetSurveyByName">
+  <component name="RunManager" selected="Gradle.ControllerTest">
     <configuration name="ControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.ControllerTest.testGetSurveyByName" />
         <item itemvalue="Gradle.ControllerTest.testDisplaySurveys" />
         <item itemvalue="Gradle.ControllerTest.testAddQuestion" />
         <item itemvalue="Gradle.ControllerTest.testCreateSurvey" />
-        <item itemvalue="Gradle.ControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589665702688</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commit with test to get survey by name that fails">
+      <created>1589666144903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589666144903</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +219,7 @@
     <MESSAGE value="Implement create survey functionality" />
     <MESSAGE value="Implement functionality to add question to survey" />
     <MESSAGE value="Refactor adding questions to  survey" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor adding questions to  survey" />
+    <MESSAGE value="Commit with test to get survey by name that fails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit with test to get survey by name that fails" />
   </component>
 </project>

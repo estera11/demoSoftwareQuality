@@ -3,6 +3,7 @@ import model.Survey;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Controller {
     private static Survey survey;
@@ -15,7 +16,8 @@ public class Controller {
     //method to create survey
     public Survey createSurvey(String title){
        Survey survey = new Survey(title);
-        return survey;
+       surveys.add(survey);
+       return survey;
     }
 
     //method to add question to survey
@@ -49,7 +51,23 @@ public class Controller {
 
     //method to get survey by name. Story Points: 2
     public Survey getSurveyByName(String surveyName){
-        return null;
+        boolean found = false;
+        Survey survey = null;
+        int index =0;
+        for (int i=0;i<surveys.size();i++){
+            if(surveys.get(i).getTitle().equals(surveyName)){
+                found = true;
+                index = i;
+            }
+            else{
+                throw new NoSuchElementException();
+            }
+
+        }
+        if(found){
+            survey = surveys.get(index);
+        }
+        return survey;
     }
 
     public static void main(String[] args) {

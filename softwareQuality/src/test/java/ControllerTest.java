@@ -61,6 +61,7 @@ public class ControllerTest {
 
     @Test
     public void testGetSurveyByName(){
+        controller.createSurvey("First Survey");
         Survey survey = controller.getSurveyByName("First Survey");
         String expected = "First Survey";
         String actual = survey.getTitle();
