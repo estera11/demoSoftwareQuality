@@ -87,6 +87,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="ControllerTest.calculateStandardDevForSurvey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ControllerTest.calculateStandardDevForSurvey&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="ControllerTest.testCalculateMaxForSurvey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -127,33 +147,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ControllerTest.testCalculateSurveyAverage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCalculateSurveyAverage&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ControllerTest" />
+        <item itemvalue="Gradle.ControllerTest.calculateStandardDevForSurvey" />
         <item itemvalue="Gradle.ControllerTest.testCalculateMinForSurvey" />
         <item itemvalue="Gradle.ControllerTest.testCalculateMaxForSurvey" />
         <item itemvalue="Application.Controller" />
-        <item itemvalue="Gradle.ControllerTest.testCalculateSurveyAverage" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589893540949</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implement calculate maximum and minimum score for a survey">
+      <created>1589906055663</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589906055663</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +272,7 @@
     <MESSAGE value="Refactor survey response to allow adding more answers to a question" />
     <MESSAGE value="Create test that fails" />
     <MESSAGE value="Implement calculate average and display it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement calculate average and display it" />
+    <MESSAGE value="Implement calculate maximum and minimum score for a survey" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement calculate maximum and minimum score for a survey" />
   </component>
 </project>

@@ -151,6 +151,25 @@ public class ControllerTest {
 
     }
 
+    @Test
+    public void calculateStandardDevForSurvey(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(1);
+        answers2.add(3);
+        controller.createSurveyResponse(2,answers2, survey, surveyResponses);
+
+        double expected = 1.015504800579495;
+        double actual = controller.getStandardDev(survey.getTitle());
+
+        assertEquals(expected, actual, DELTA);
+
+    }
 
 
 

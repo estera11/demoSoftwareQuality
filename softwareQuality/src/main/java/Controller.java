@@ -143,6 +143,7 @@ public class Controller {
         return max;
     }
 
+
     public int getMinForSurvey(String surveyTitle){
         Survey s = getSurveyByName(surveyTitle);
         int min = Integer.MAX_VALUE;
@@ -158,6 +159,34 @@ public class Controller {
             }
         }
         return min;
+    }
+
+    public double getStandardDev(String surveyTitle) {
+        Survey s = getSurveyByName(surveyTitle);
+        double sum  = 0.0, standardDeviation = 0.0;
+        int count = 0;
+        double mean = 0;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        for (SurveyResponse sr : responseList) {
+            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
+            for (Map.Entry<Integer, ArrayList<Integer>> entry : responses.entrySet()) {
+                count = count + entry.getValue().size();
+                for(Integer value :entry.getValue()){
+                    sum = sum + value;
+                }
+                mean = sum/count;
+                for(Integer value :entry.getValue()){
+                    double v = Math.pow(value-mean, 2);
+                    standardDeviation += v/count;
+                }
+            }
+
+        }
+//        System.out.println("Mean"+mean);
+//        System.out.println("Sum "+sum);
+//        System.out.println(count);
+//        System.out.println(standardDeviation);
+        return Math.sqrt(standardDeviation);
     }
     public static void main(String[] args) {
         Controller c = new Controller();
@@ -234,5 +263,6 @@ public class Controller {
         //min value for survey
         System.out.println("Minimum score in the First Survey is: "+c.getMinForSurvey("First Survey"));
     }
+
 
 }
