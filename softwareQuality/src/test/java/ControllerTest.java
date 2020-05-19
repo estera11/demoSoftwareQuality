@@ -93,10 +93,19 @@ public class ControllerTest {
 
     @Test
     public void testCalculateSurveyAvergae(){
-        Survey survey = new Survey("Test Survey");
-        List<SurveyResponse> responseList = survey.getSurveyResponses();
-        double expected = 3.4;
-       double actual = controller.calcultateSurveyAverage(survey);
+        Survey survey = controller.createSurvey("Survey");
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        controller.createSurveyResponse(1,answers, survey);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(2);
+        answers2.add(3);
+        controller.createSurveyResponse(2,answers2, survey);
+
+        double expected = 3;
+        double actual = controller.calcultateSurveyAverage("Survey");
 
        assertEquals(expected, actual, DELTA);
 

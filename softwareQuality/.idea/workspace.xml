@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ControllerTest.testCalculateSurveyAvergae">
+  <component name="RunManager" selected="Application.Controller">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="softwareQuality.main" />
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589885764001</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Create test that fails">
+      <created>1589890352511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589890352511</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +246,7 @@
     <MESSAGE value="Access getSurveyByName from caller" />
     <MESSAGE value="Implement functionality to add SurveyResponse" />
     <MESSAGE value="Refactor survey response to allow adding more answers to a question" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor survey response to allow adding more answers to a question" />
+    <MESSAGE value="Create test that fails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create test that fails" />
   </component>
 </project>
