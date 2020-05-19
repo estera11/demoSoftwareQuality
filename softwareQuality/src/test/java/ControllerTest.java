@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 public class ControllerTest {
 
     Controller controller = new Controller();
+    private static final double DELTA = 1e-15;
 
     @Test
     public void testCreateSurvey() {
@@ -87,6 +88,26 @@ public class ControllerTest {
         int actual =  survey.getSurveyResponses().size();
 
         assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testCalculateSurveyAvergae(){
+        Survey survey = controller.createSurvey("Survey");
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        controller.createSurveyResponse(1,answers, survey);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(2);
+        answers2.add(3);
+        controller.createSurveyResponse(2,answers2, survey);
+
+        double expected = 3;
+        double actual = controller.calcultateSurveyAverage("Survey");
+
+       assertEquals(expected, actual, DELTA);
 
     }
 

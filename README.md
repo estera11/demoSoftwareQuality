@@ -33,3 +33,21 @@ Regarding the priority the task are ordered based on their priority.
 13. Get maximum and minimum score for a question. Story Points: 3
 
 I have decided to assign 1 point to the 2nd task as it only involves th creation of a class and no testing. Starting from there as tasks get more complex and involve testing and other different steps I have decided to increase the story points. So for tasks like the 3rd and 4th I have decide to estimate 2 story points.
+
+## Code-review checklist
+
+- Code Indentation and Formatting
+
+- Naming Conventions
+
+- White-Spaces
+
+- Proper use of comments
+
+- Exception Handling
+
+- Code Complexity
+
+- Functional Requirements
+
+- Unit tests

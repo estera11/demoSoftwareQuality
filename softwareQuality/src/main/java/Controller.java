@@ -95,7 +95,6 @@ public class Controller {
         List<SurveyResponse> responseList = survey.getSurveyResponses();
         System.out.println(survey.getTitle());
         for (SurveyResponse sr : responseList) {
-           // System.out.println("Question: "+sr.getResponse().);
             sr.getResponses().forEach((k,v)->{
                 System.out.println("Question: "+k);
                 for (Integer answer:v) {
@@ -108,9 +107,26 @@ public class Controller {
         }
     }
 
-
-
-
+    public double calcultateSurveyAverage(String surveyTitle){
+       Survey survey = getSurveyByName(surveyTitle);
+        double average = 0;
+        double sum = 0;
+        int count = 0;
+        List<SurveyResponse> responseList = survey.getSurveyResponses();
+        for (SurveyResponse sr : responseList) {
+            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
+            for (Map.Entry<Integer, ArrayList<Integer>> entry : responses.entrySet()) {
+                count =count + entry.getValue().size();
+               for(Integer value :entry.getValue()){
+                   sum = sum + value;
+               }
+            }
+        }
+//        System.out.println("Sum "+ sum);
+//        System.out.println("Count "+ count);
+        average = sum/count;
+        return average;
+    }
     public static void main(String[] args) {
         Controller c = new Controller();
 
@@ -166,6 +182,10 @@ public class Controller {
         System.out.println("");
         c. displaysResponsesForSurvey(survey);
 
+        System.out.println("");
+        double averageFirstSurvey = c.calcultateSurveyAverage("First Survey");
+        System.out.println("Average First Survey = "+ averageFirstSurvey);
+        
     }
 
 }

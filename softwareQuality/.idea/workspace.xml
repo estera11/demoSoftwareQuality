@@ -9,9 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Survey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/SurveyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SurveyResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,12 +77,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ControllerTest.testCreateSurveyResponse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ControllerTest.testCalculateSurveyAvergae" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCreateSurveyResponse&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCalculateSurveyAvergae&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -100,12 +97,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ControllerTest.testDisplaySurveys" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ControllerTest.testCreateSurveyResponse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testDisplaySurveys&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCreateSurveyResponse&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -142,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ControllerTest.testCalculateSurveyAvergae" />
         <item itemvalue="Gradle.ControllerTest.testCreateSurveyResponse" />
         <item itemvalue="Gradle.ControllerTest.testGetSurveyByName" />
         <item itemvalue="Application.Controller" />
         <item itemvalue="Gradle.ControllerTest" />
-        <item itemvalue="Gradle.ControllerTest.testDisplaySurveys" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589755308878</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactor survey response to allow adding more answers to a question">
+      <created>1589885764001</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589885764001</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create test that fails">
+      <created>1589890352511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589890352511</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +245,8 @@
     <MESSAGE value="Implement functionality to search survey by name and made its corresponding test pass" />
     <MESSAGE value="Access getSurveyByName from caller" />
     <MESSAGE value="Implement functionality to add SurveyResponse" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement functionality to add SurveyResponse" />
+    <MESSAGE value="Refactor survey response to allow adding more answers to a question" />
+    <MESSAGE value="Create test that fails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create test that fails" />
   </component>
 </project>
