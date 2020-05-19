@@ -76,9 +76,12 @@ public class ControllerTest {
     @Test
     public void testCreateSurveyResponse(){
         Survey survey = new Survey("Survey");
-        Map<Integer, Integer> r = new HashMap<>();
-        controller.createSurveyResponse(1,4, survey);
-        controller.createSurveyResponse(2,3, survey);
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        controller.createSurveyResponse(1,answers, survey);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(2);
+        controller.createSurveyResponse(2,answers2, survey);
 
         int expected = 2;
         int actual =  survey.getSurveyResponses().size();
@@ -86,6 +89,8 @@ public class ControllerTest {
         assertEquals(expected, actual);
 
     }
+
+
 
 
 

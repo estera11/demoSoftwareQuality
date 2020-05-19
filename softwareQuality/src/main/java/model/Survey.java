@@ -7,6 +7,7 @@ public class Survey {
 
     private List<Question> questionList = new ArrayList<>();
     private String title;
+
     private List<SurveyResponse> surveyResponses;
 
     public Survey(String title) { this.title = title; }

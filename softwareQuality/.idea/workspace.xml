@@ -203,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589712822385</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implement functionality to add SurveyResponse">
+      <created>1589755308878</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589755308878</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +233,7 @@
     <MESSAGE value="Commit with test to get survey by name that fails" />
     <MESSAGE value="Implement functionality to search survey by name and made its corresponding test pass" />
     <MESSAGE value="Access getSurveyByName from caller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Access getSurveyByName from caller" />
+    <MESSAGE value="Implement functionality to add SurveyResponse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement functionality to add SurveyResponse" />
   </component>
 </project>

@@ -9,6 +9,7 @@ public class Controller {
     private static Survey survey2;
     private static List<Survey> surveys = new ArrayList<>();
     private static List<SurveyResponse> surveyResponses = new ArrayList<>();
+    private  static SurveyResponse response;
 
 
 
@@ -70,7 +71,7 @@ public class Controller {
         return survey;
     }
 
-    public void displaySurvey(Survey survey){
+    private void displaySurvey(Survey survey){
         System.out.println("Survey Title: "+survey.getTitle());
         for (Question q: survey.getQuestionList()) {
                 System.out.println("Question "+q.getId()+ ": "+q.getQuestion());
@@ -78,15 +79,35 @@ public class Controller {
     }
 
     //method to create surveyResponse
-    public SurveyResponse createSurveyResponse(int questionId, int answer, Survey survey){
+    public SurveyResponse createSurveyResponse(int questionId,  ArrayList<Integer> answers, Survey survey){
         SurveyResponse response = new SurveyResponse();
-        Map<Integer, Integer> r = new HashMap<>();
-        r.put(questionId,answer);
-        response.setResponse(r);
+        Map<Integer, ArrayList<Integer>> responses = new HashMap<>();
+        responses.put(questionId,answers);
+        response.setResponses(responses);
         surveyResponses.add(response);
         survey.setSurveyResponses(surveyResponses);
         return response;
     }
+
+    //display all responses for a survey
+
+    public void displaysResponsesForSurvey(Survey survey){
+        List<SurveyResponse> responseList = survey.getSurveyResponses();
+        System.out.println(survey.getTitle());
+        for (SurveyResponse sr : responseList) {
+           // System.out.println("Question: "+sr.getResponse().);
+            sr.getResponses().forEach((k,v)->{
+                System.out.println("Question: "+k);
+                for (Integer answer:v) {
+                    int index = v.indexOf(answer)+1;
+                    System.out.println("Answer "+index+": "+ answer);
+                }
+                System.out.println("");
+
+            });
+        }
+    }
+
 
 
 
@@ -129,8 +150,21 @@ public class Controller {
 
 
          //create survey response and add it to specific survey
-        c.createSurveyResponse(1,4, survey);
-        c.createSurveyResponse(2,3, survey);
+        ArrayList<Integer> answersToFirstQ = new ArrayList<>();
+        answersToFirstQ.add(3);
+        answersToFirstQ.add(5);
+        answersToFirstQ.add(2);
+        c.createSurveyResponse(1,answersToFirstQ, survey);
+
+        ArrayList<Integer> answersToSecondQ = new ArrayList<>();
+        answersToSecondQ.add(4);
+        answersToSecondQ.add(2);
+        answersToSecondQ.add(3);
+
+        c.createSurveyResponse(2,answersToSecondQ, survey);
+
+        System.out.println("");
+        c. displaysResponsesForSurvey(survey);
 
     }
 
