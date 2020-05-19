@@ -5,9 +5,7 @@ import model.SurveyResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -56,7 +54,7 @@ public class ControllerTest {
         surveys.add(survey2);
         surveys.add(survey3);
 
-        String expected = "There are 3 surveys";
+        String expected = "Surveys displayed";
         String actual = controller.displaySurveys(surveys);
 
         assertEquals(expected, actual);
@@ -76,13 +74,14 @@ public class ControllerTest {
 
     @Test
     public void testCreateSurveyResponse(){
-        Survey survey = new Survey("Survey");
+        Survey survey =  controller.createSurvey("Test Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
         ArrayList<Integer> answers = new ArrayList<>();
         answers.add(3);
-        controller.createSurveyResponse(1,answers, survey);
+        controller.createSurveyResponse(1,answers, survey,surveyResponses);
         ArrayList<Integer> answers2 = new ArrayList<>();
         answers2.add(2);
-        controller.createSurveyResponse(2,answers2, survey);
+        controller.createSurveyResponse(2,answers2, survey, surveyResponses);
 
         int expected = 2;
         int actual =  survey.getSurveyResponses().size();
@@ -92,17 +91,17 @@ public class ControllerTest {
     }
 
     @Test
-    public void testCalculateSurveyAvergae(){
+    public void testCalculateSurveyAverage(){
         Survey survey = controller.createSurvey("Survey");
-
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
         ArrayList<Integer> answers = new ArrayList<>();
         answers.add(3);
         answers.add(4);
-        controller.createSurveyResponse(1,answers, survey);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
         ArrayList<Integer> answers2 = new ArrayList<>();
         answers2.add(2);
         answers2.add(3);
-        controller.createSurveyResponse(2,answers2, survey);
+        controller.createSurveyResponse(2,answers2, survey, surveyResponses);
 
         double expected = 3;
         double actual = controller.calcultateSurveyAverage("Survey");
@@ -111,6 +110,46 @@ public class ControllerTest {
 
     }
 
+
+    @Test
+    public void testCalculateMaxForSurvey(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(2);
+        answers2.add(3);
+        controller.createSurveyResponse(2,answers2, survey, surveyResponses);
+
+        int expected = 4;
+        int actual = controller.getMaxForSurvey(survey.getTitle());
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testCalculateMinForSurvey(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+        ArrayList<Integer> answers2 = new ArrayList<>();
+        answers2.add(1);
+        answers2.add(3);
+        controller.createSurveyResponse(2,answers2, survey, surveyResponses);
+
+        int expected = 1;
+        int actual = controller.getMinForSurvey(survey.getTitle());
+
+        assertEquals(expected, actual);
+
+    }
 
 
 
