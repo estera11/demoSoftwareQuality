@@ -108,9 +108,9 @@ public class Controller {
         }
     }
 
-
-
-
+    public double calcultateSurveyAverage(Survey survey){
+        return 0;
+    }
     public static void main(String[] args) {
         Controller c = new Controller();
 
