@@ -9,7 +9,6 @@ public class Controller {
     private static Survey survey2;
     private static List<Survey> surveys = new ArrayList<>();
     private static List<SurveyResponse> surveyResponses = new ArrayList<>();
-    private  static SurveyResponse response;
 
 
 
@@ -79,13 +78,13 @@ public class Controller {
     }
 
     //method to create surveyResponse
-    public SurveyResponse createSurveyResponse(int questionId,  ArrayList<Integer> answers, Survey survey){
+    public SurveyResponse createSurveyResponse(int questionId,  ArrayList<Integer> answers, Survey survey, List<SurveyResponse> resp){
         SurveyResponse response = new SurveyResponse();
         Map<Integer, ArrayList<Integer>> responses = new HashMap<>();
         responses.put(questionId,answers);
         response.setResponses(responses);
-        surveyResponses.add(response);
-        survey.setSurveyResponses(surveyResponses);
+        resp.add(response);
+        survey.setSurveyResponses(resp);
         return response;
     }
 
@@ -126,6 +125,39 @@ public class Controller {
 //        System.out.println("Count "+ count);
         average = sum/count;
         return average;
+    }
+
+    public int getMaxForSurvey(String surveyTitle){
+        Survey s = getSurveyByName(surveyTitle);
+        int max =0;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        for (SurveyResponse sr : responseList) {
+            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
+            for (Map.Entry<Integer, ArrayList<Integer>> entry : responses.entrySet()) {
+                for(Integer value :entry.getValue()){
+                    if(value>max)
+                        max = value;
+                }
+            }
+        }
+        return max;
+    }
+
+    public int getMinForSurvey(String surveyTitle){
+        Survey s = getSurveyByName(surveyTitle);
+        int min = Integer.MAX_VALUE;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        for (SurveyResponse sr : responseList) {
+            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
+
+            for (Map.Entry<Integer, ArrayList<Integer>> entry : responses.entrySet()) {
+                for(Integer value :entry.getValue()){
+                    if (value<min)
+                        min = value;
+                }
+            }
+        }
+        return min;
     }
     public static void main(String[] args) {
         Controller c = new Controller();
@@ -170,14 +202,21 @@ public class Controller {
         answersToFirstQ.add(3);
         answersToFirstQ.add(5);
         answersToFirstQ.add(2);
-        c.createSurveyResponse(1,answersToFirstQ, survey);
+        c.createSurveyResponse(1,answersToFirstQ, survey, surveyResponses);
 
         ArrayList<Integer> answersToSecondQ = new ArrayList<>();
         answersToSecondQ.add(4);
         answersToSecondQ.add(2);
         answersToSecondQ.add(3);
 
-        c.createSurveyResponse(2,answersToSecondQ, survey);
+        c.createSurveyResponse(2,answersToSecondQ, survey, surveyResponses);
+
+        ArrayList<Integer> answersToThirdQ = new ArrayList<>();
+        answersToThirdQ.add(5);
+        answersToThirdQ.add(3);
+        answersToThirdQ.add(4);
+
+        c.createSurveyResponse(3,answersToThirdQ, survey, surveyResponses);
 
         System.out.println("");
         c. displaysResponsesForSurvey(survey);
@@ -185,7 +224,15 @@ public class Controller {
         System.out.println("");
         double averageFirstSurvey = c.calcultateSurveyAverage("First Survey");
         System.out.println("Average First Survey = "+ averageFirstSurvey);
-        
+
+
+        System.out.println("");
+
+        //max value for survey
+        System.out.println("Maximum score in the First Survey is: "+c.getMaxForSurvey("First Survey"));
+
+        //min value for survey
+        System.out.println("Minimum score in the First Survey is: "+c.getMinForSurvey("First Survey"));
     }
 
 }
