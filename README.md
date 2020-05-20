@@ -68,7 +68,7 @@ The  window displays the percentage of the covered classes and lines for directo
 
 ## Team version-control
 
-Branch used in this project is associated with different tasks.
+Branches used in this project are associated with different tasks.
 The branches created for this project are:
 
 - master stores the official and final release history
@@ -89,7 +89,7 @@ The following branches are for feature branches .
 
 - standardDev created in order to find the standard deviation for a question
 
-Late in the development cycle I have come to realize I missused the git flow process and missed the implementation of the develop branch and I was merging the branches straight in master.
+Late in the development cycle I have come to realize I missused the git flow process and missed the implementation of the develop branch and I was merging the branches straight in master.This is a mistake I learned from and I will take in consideration in the future.
 
 ## Code-review checklist
 
