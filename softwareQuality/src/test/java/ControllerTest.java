@@ -192,5 +192,44 @@ public class ControllerTest {
     }
 
 
+    @Test
+    public void testGetMaxForQuestion(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        answers.add(5);
+        answers.add(5);
+        answers.add(1);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+
+        int expected = 5;
+        int actual = controller.getMaxForQuestion("Survey", 1);
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testGetMinForQuestion(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        answers.add(5);
+        answers.add(5);
+        answers.add(1);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+
+        int expected = 1;
+        int actual = controller.getMinForQuestion("Survey", 1);
+
+        assertEquals(expected, actual);
+
+    }
+
+
 
 }

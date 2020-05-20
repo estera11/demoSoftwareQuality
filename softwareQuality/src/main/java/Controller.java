@@ -198,13 +198,12 @@ public class Controller {
         List<Integer> answers;
         for (SurveyResponse sr : responseList) {
             //answers for the question got by question id
-            if(sr.getResponses().containsKey(1)){
+            if(sr.getResponses().containsKey(id)){
                 answers =  sr.getResponses().get(id);
                 for (Integer a: answers) {
                     sum = sum + a;
                     count = count +1;
                 }
-                average = sum/count;
             }
             else{
                 average = 0;
@@ -214,6 +213,46 @@ public class Controller {
         return average;
     }
 
+    public int getMaxForQuestion(String surveyTitle, Integer id){
+        Survey s = getSurveyByName(surveyTitle);
+        int max = 0;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        List<Integer> answers;
+        for (SurveyResponse sr : responseList) {
+            //answers for the question got by question id
+            if(sr.getResponses().containsKey(id)){
+                answers =  sr.getResponses().get(id);
+
+                for (Integer a: answers) {
+                    if(a > max){
+                        max = a;
+                    }
+
+                }
+            }
+        }
+
+        return max;
+    }
+
+    public int getMinForQuestion(String surveyTitle, Integer id){
+        Survey s = getSurveyByName(surveyTitle);
+        int min = Integer.MAX_VALUE;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        List<Integer> answers;
+        for (SurveyResponse sr : responseList) {
+            //answers for the question got by question id
+            if(sr.getResponses().containsKey(id)){
+                answers =  sr.getResponses().get(id);
+                for (Integer a: answers) {
+                    if(a<min)
+                        min = a;
+                }
+            }
+        }
+
+        return min;
+    }
 
     public static void main(String[] args) {
         Controller c = new Controller();
@@ -298,7 +337,19 @@ public class Controller {
         //average score for a question
         System.out.println("");
         double average = c.getAverageForQuestion("First Survey", 1);
-        System.out.println("Average for the Question 1 in the First Survey :"+average);
+        System.out.println("Average for the Question 1 in the First Survey: "+average);
+
+        //max score for a question
+        System.out.println("");
+        int max  = c.getMaxForQuestion("First Survey", 1);
+        System.out.println("Maximum score for the Question 1 in the First Survey: "+max);
+
+        //min score for a question
+        System.out.println("");
+        int min  = c.getMinForQuestion("First Survey", 1);
+        System.out.println("Minimum score for the Question 1 in the First Survey: "+min);
+
+
     }
 
 
