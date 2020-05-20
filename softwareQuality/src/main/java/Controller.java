@@ -257,34 +257,7 @@ public class Controller {
         return min;
     }
 
-    public double calculateStdDevForQuestion(String surveyTitle, Integer id){
-        Survey s = getSurveyByName(surveyTitle);
-        double sum = 0.0;
-        double mean = 0;
-        double v = 0.0;
-        double stdDev = 0.0;
-        int count = 0;
-        List<SurveyResponse> responseList = s.getSurveyResponses();
-        List<Integer> answers;
-        for (SurveyResponse sr : responseList) {
-            //answers for the question got by question id
-            if(sr.getResponses().containsKey(id)){
-                answers =  sr.getResponses().get(id);
-                count = answers.size();
-                for (Integer a: answers) {
-                    sum = sum+a;
-                }
-                mean = (double) sum/count;
-                for (Integer a: answers) {
-                    v = v + Math.pow(a - mean, 2);
-                }
-            }
-        }
 
-        stdDev = v/count;
-
-        return Math.sqrt(stdDev);
-    }
 
     public static void main(String[] args) {
         Controller c = new Controller();
@@ -380,10 +353,6 @@ public class Controller {
         int min  = c.getMinForQuestion("First Survey", 1);
         System.out.println("Minimum score for the Question 1 in the First Survey: "+min);
 
-        //standard deviation for survey
-        System.out.println("");
-        double standardDev = c.calculateStdDevForQuestion("First Survey", 1);
-        System.out.println("Standard deviation for Question 1 in First Survey: "+standardDev);
 
     }
 
