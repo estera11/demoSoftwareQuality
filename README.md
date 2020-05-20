@@ -64,7 +64,7 @@ In order to run this tool I have selected the "Run 'ControllerTest' with Coverag
 
 The  window displays the percentage of the covered classes and lines for directories and the percentage of the covered methods and lines for classes.
 
-![Test Coverage](coverage.png)
+![Test Coverage](coverage.PNG)
 
 ## Team version-control
 
@@ -89,7 +89,7 @@ The following branches are for feature branches .
 
 - standardDev created in order to find the standard deviation for a question
 
-ALate in the development cycle I have come to realize I missused the git flow process and missed the implementation of the develop branch and I was merging the branches straight in master.
+Late in the development cycle I have come to realize I missused the git flow process and missed the implementation of the develop branch and I was merging the branches straight in master.
 
 ## Code-review checklist
 
