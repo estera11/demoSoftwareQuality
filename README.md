@@ -50,10 +50,12 @@ For each task I have first written the test and then implemented the fuctionlity
 I am demostrating the use of this approach in the folowing commits:
 
 - e441f7fa4dddc7236336eef76ccdd357906c2af3
+
 This commit contains the a method created in order to test the method calculateSurveyAverage(). The method only contained expected and actual value. The expected value was hardcoded and the actual value was calling the method in Controller.
 The method calculateSurveyAverage() in Controller at the moment was not doing anything.
 
 - dd8861600f25a4c6202d57fdc52b85cd3d810e21
+
 I have written the test, create the needed objects in order to use the method and after that I have implemented the functionality to calculate the average in the method in Controller.
 
 ## Test coverage metric
