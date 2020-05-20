@@ -78,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ControllerTest">
+  <component name="RunManager" selected="Application.Controller">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="softwareQuality.main" />
@@ -92,6 +92,26 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;ControllerTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ControllerTest.calculateStandardDevForSurvey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ControllerTest.calculateStandardDevForSurvey&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -126,32 +146,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ControllerTest.testGetMaxForQuestion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ControllerTest.testCalculateStdDevForQuestion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testGetMaxForQuestion&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ControllerTest.testGetMinForQuestion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ControllerTest.testGetMinForQuestion&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ControllerTest.testCalculateStdDevForQuestion&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -168,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ControllerTest" />
-        <item itemvalue="Gradle.ControllerTest.testCalculateQuestionAverage" />
-        <item itemvalue="Gradle.ControllerTest.testGetMinForQuestion" />
-        <item itemvalue="Gradle.ControllerTest.testGetMaxForQuestion" />
+        <item itemvalue="Gradle.ControllerTest.testCalculateStdDevForQuestion" />
         <item itemvalue="Application.Controller" />
+        <item itemvalue="Gradle.ControllerTest" />
+        <item itemvalue="Gradle.ControllerTest.calculateStandardDevForSurvey" />
+        <item itemvalue="Gradle.ControllerTest.testCalculateQuestionAverage" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589962292710</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implement min max score for a question">
+      <created>1589963536316</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1589963536316</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +331,7 @@
     <MESSAGE value="Implement average score for a question" />
     <MESSAGE value="Add comment" />
     <MESSAGE value="Refactored logic for computation of average" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored logic for computation of average" />
+    <MESSAGE value="Implement min max score for a question" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement min max score for a question" />
   </component>
 </project>

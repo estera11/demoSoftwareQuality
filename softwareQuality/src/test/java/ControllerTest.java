@@ -162,9 +162,11 @@ public class ControllerTest {
         ArrayList<Integer> answers2 = new ArrayList<>();
         answers2.add(1);
         answers2.add(3);
+        answers2.add(4);
+
         controller.createSurveyResponse(2,answers2, survey, surveyResponses);
 
-        double expected = 1.015504800579495;
+        double expected = 1.0488088481701516;
         double actual = controller.getStandardDev(survey.getTitle());
 
         assertEquals(expected, actual, DELTA);
@@ -227,6 +229,25 @@ public class ControllerTest {
         int actual = controller.getMinForQuestion("Survey", 1);
 
         assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testCalculateStdDevForQuestion(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        answers.add(5);
+        answers.add(5);
+        answers.add(1);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+
+        double expected = 1.4966629547095764;
+        double actual = controller.calculateStdDevForQuestion("Survey", 1);
+
+        assertEquals(expected, actual, DELTA);
 
     }
 
