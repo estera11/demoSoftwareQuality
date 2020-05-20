@@ -58,6 +58,39 @@ I have written the test, create the needed objects in order to use the method an
 
 ## Test coverage metric
 
+The tool used in order to get the test coverage metric is IntelliJ IDEA code coverage runner. This is a free code coverage library for Java and is available to use in IntelliJ IDEA build runner.
+
+In order to run this tool I have selected the "Run 'ControllerTest' with Coverage".
+
+The  window displays the percentage of the covered classes and lines for directories and the percentage of the covered methods and lines for classes.
+
+![Test Coverage](coverage.png)
+
+## Team version-control
+
+Branch used in this project is associated with different tasks.
+The branches created for this project are:
+
+- master stores the official and final release history
+
+The following branches are for feature branches .
+
+- developDemoQA used in order to develop the first 8 stories
+
+- developSurveyAverage used to implement functionality for calculating the avergae score for a survey
+
+- developMinMaxScore used in order to calculate the minimum and maximum score for a survey
+
+- developStandardDev created for implementing functionlity to calculate standard deviation of a survey
+
+- developAverageQuestion used to calculate the avergae for a question
+
+- minMaxForQ created to add functionlity to calculate minimum and maximum score for a question
+
+- standardDev created in order to find the standard deviation for a question
+
+ALate in the development cycle I have come to realize I missused the git flow process and missed the implementation of the develop branch and I was merging the branches straight in master.
+
 ## Code-review checklist
 
 - Code Indentation and Formatting
