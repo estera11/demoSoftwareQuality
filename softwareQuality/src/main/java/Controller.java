@@ -191,17 +191,21 @@ public class Controller {
 
     public double getAverageForQuestion(String surveyTitle, Integer id){
         Survey s = getSurveyByName(surveyTitle);
-        double sum = 0, average = 0.0;
+        double sum = 0;
         int count = 0;
+        double average = 0.0;
         List<SurveyResponse> responseList = s.getSurveyResponses();
+        List<Integer> answers;
         for (SurveyResponse sr : responseList) {
-            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
-            List<Integer> answers = responses.get(id);
+            //answers for the question got by question id
+            answers =  sr.getResponses().get(id);
             for (Integer a: answers) {
-                sum = sum +a;
+                sum = sum + a;
                 count = count +1;
             }
+            System.out.println(sum/count);
         }
+        System.out.println(sum);
         average = sum/count;
         return average;
     }
