@@ -73,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Controller">
+  <component name="RunManager" selected="Gradle.ControllerTest">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="softwareQuality.main" />
@@ -163,9 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.ControllerTest.testCalculateStdDevForQuestion" />
         <item itemvalue="Application.Controller" />
-        <item itemvalue="Gradle.ControllerTest" />
         <item itemvalue="Gradle.ControllerTest.calculateStandardDevForSurvey" />
         <item itemvalue="Gradle.ControllerTest.testCalculateQuestionAverage" />
       </list>
@@ -301,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589967221720</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Deleted changes added in wrong branch">
+      <created>1589967438595</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589967438595</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,6 +342,7 @@
     <MESSAGE value="Refactored logic for computation of average" />
     <MESSAGE value="Implement min max score for a question" />
     <MESSAGE value="Implement computation of standard deviation for a question" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement computation of standard deviation for a question" />
+    <MESSAGE value="Deleted changes added in wrong branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted changes added in wrong branch" />
   </component>
 </project>
