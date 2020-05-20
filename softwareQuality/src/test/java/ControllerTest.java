@@ -162,9 +162,11 @@ public class ControllerTest {
         ArrayList<Integer> answers2 = new ArrayList<>();
         answers2.add(1);
         answers2.add(3);
+        answers2.add(4);
+
         controller.createSurveyResponse(2,answers2, survey, surveyResponses);
 
-        double expected = 1.015504800579495;
+        double expected = 1.0488088481701516;
         double actual = controller.getStandardDev(survey.getTitle());
 
         assertEquals(expected, actual, DELTA);
