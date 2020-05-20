@@ -2,6 +2,7 @@ import model.Question;
 import model.Survey;
 import model.SurveyResponse;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Controller {
@@ -163,9 +164,8 @@ public class Controller {
 
     public double getStandardDev(String surveyTitle) {
         Survey s = getSurveyByName(surveyTitle);
-        double sum  = 0.0, standardDeviation = 0.0;
+        double sum  = 0.0, standardDeviation = 0.0, mean = 0;
         int count = 0;
-        double mean = 0;
         List<SurveyResponse> responseList = s.getSurveyResponses();
         for (SurveyResponse sr : responseList) {
             Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
@@ -188,6 +188,25 @@ public class Controller {
 //        System.out.println(standardDeviation);
         return Math.sqrt(standardDeviation);
     }
+
+    public double getAverageForQuestion(String surveyTitle, Integer id){
+        Survey s = getSurveyByName(surveyTitle);
+        double sum = 0, average = 0.0;
+        int count = 0;
+        List<SurveyResponse> responseList = s.getSurveyResponses();
+        for (SurveyResponse sr : responseList) {
+            Map<Integer, ArrayList<Integer>> responses = sr.getResponses();
+            List<Integer> answers = responses.get(id);
+            for (Integer a: answers) {
+                sum = sum +a;
+                count = count +1;
+            }
+        }
+        average = sum/count;
+        return average;
+    }
+
+
     public static void main(String[] args) {
         Controller c = new Controller();
 
@@ -262,6 +281,16 @@ public class Controller {
 
         //min value for survey
         System.out.println("Minimum score in the First Survey is: "+c.getMinForSurvey("First Survey"));
+
+        //standard deviation for survey
+        System.out.println("");
+        double std = c.getStandardDev("First Survey");
+        System.out.println("Standard deviation for First Survey: "+std);
+
+        //average score for a question
+        System.out.println("");
+        double average = c.getAverageForQuestion("First Survey", 1);
+        System.out.println("Average for the Question 1 in the First Survey :"+average);
     }
 
 

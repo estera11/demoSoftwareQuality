@@ -172,6 +172,25 @@ public class ControllerTest {
     }
 
 
+    @Test
+    public void testCalculateQuestionAverage(){
+        Survey survey = controller.createSurvey("Survey");
+        List<SurveyResponse> surveyResponses = new ArrayList<>();
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+        answers.add(4);
+        answers.add(5);
+        answers.add(5);
+        answers.add(1);
+        controller.createSurveyResponse(1,answers, survey, surveyResponses);
+
+        double expected = 3.6;
+        double actual = controller.getAverageForQuestion("Survey", 1);
+
+        assertEquals(expected, actual, DELTA);
+
+    }
+
 
 
 }
