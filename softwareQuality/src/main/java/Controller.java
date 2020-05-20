@@ -198,14 +198,18 @@ public class Controller {
         List<Integer> answers;
         for (SurveyResponse sr : responseList) {
             //answers for the question got by question id
-            answers =  sr.getResponses().get(id);
-            for (Integer a: answers) {
-                sum = sum + a;
-                count = count +1;
+            if(sr.getResponses().containsKey(1)){
+                answers =  sr.getResponses().get(id);
+                for (Integer a: answers) {
+                    sum = sum + a;
+                    count = count +1;
+                }
+                average = sum/count;
             }
-            System.out.println(sum/count);
+            else{
+                average = 0;
+            }
         }
-        System.out.println(sum);
         average = sum/count;
         return average;
     }
